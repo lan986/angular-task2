@@ -1,0 +1,146 @@
+
+
+<h4>account-info works!</h4>
+<hr>
+<div class="content">
+    
+    <div class="">
+      <p><b>the account id :</b>{{account_arr.id}}</p>
+      <p><b>the name :</b>{{account_arr.clientName}}</p>
+      <p><b>the description :</b>{{account_arr.description}}</p>
+      <p><b>the legalEntity :</b>{{account_arr.legalEntity}}</p>
+</div>
+
+      <hr>
+<div class="tab">
+    <button class="tablinks" (click)="viewAddress()">Address</button>
+    <button class="tablinks" (click)="viewdepartment()">Department</button>
+    <button class="tablinks" (click)="viewcontact()">contacts</button>
+  </div>
+  <hr>
+
+    
+  <ng-container *ngIf="address">
+
+      <div class="table-content">
+            <div class="container">
+              <div class="table-responsive">
+                <div class="table-wrapper">
+                  <div class="table-title">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <h2>Address</h2>
+                      </div>
+                    
+                  </div></div>
+                  <table class="table table-striped table-hover table-bordered">
+                    <thead>
+                      <tr>
+                        <th>address</th>
+                  
+                        <th>City </th>
+                        <th>country</th>
+                        <th>bulding</th>
+                        <th>fax</th>
+                        <th>mobile</th>
+                      </tr>
+                    </thead>
+                  <tbody>
+                        <tr>
+                              <td>{{account_arr.address.id}}</td>
+                              <td>{{account_arr.address.city}}</td>
+                              <td>{{account_arr.address.country}}</td>
+                              <td>{{account_arr.address.buildingRef}}</td>
+                              <td>{{account_arr.address.faxNo}}</td>
+                              <td>{{account_arr.address.mobileNo}}</td>
+                        </tr>
+                  </tbody>
+                  </table>
+                </div></div></div></div>
+           
+        
+    </ng-container>
+      <!--address data -->
+     
+
+
+     <ng-container *ngIf="department">
+      <div class="table-content">
+            <div class="container">
+              <div class="table-responsive">
+                <div class="table-wrapper">
+                  <div class="table-title">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <h2>Departments</h2>
+                      </div>
+                    
+                  </div></div>
+                  <table class="table table-striped table-hover table-bordered">
+                    <thead>
+                      <tr>
+                       
+                  
+                        <th>id </th>
+                        <th>city</th>
+                        <th>classification</th>
+                        
+                      </tr>
+                    </thead>
+                  <tbody>
+                       
+                        <tr  *ngFor = "let dep of account_arr.departments " >
+                              <td>{{dep.id}}</td>
+                              <td>{{dep.name}}</td>
+                              <td>{{dep.classification}}</td>
+                             
+                        </tr>
+                  </tbody>
+                  </table>
+                </div></div></div></div>
+
+      </ng-container>
+
+  
+<ng-container *ngIf="contact" >
+
+      <div class="table-content">
+            <div class="container">
+              <div class="table-responsive">
+                <div class="table-wrapper">
+                  <div class="table-title">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <h2>contacts</h2>
+                      </div>
+                    
+                  </div></div>
+                  <table class="table table-striped table-hover table-bordered">
+                    <thead>
+                      <tr>
+                       
+                  
+                        <th>id </th>
+                        <th>name</th>
+                        <th>title</th>
+                        <th>position</th>
+                        
+                      </tr>
+                    </thead>
+                  <tbody>
+                       
+                        <tr *ngFor = "let contact of account_arr.contacts ">
+                              <td>{{contact.id}}</td>
+                              <td>{{contact.name}}</td>
+                              <td>{{contact.title}}</td>
+                              <td>{{contact.position}}</td>
+                        </tr>
+                  </tbody>
+                  </table>
+                </div></div></div></div>
+
+
+
+ </ng-container>
+
+

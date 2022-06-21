@@ -1,0 +1,10 @@
+<p class="text-success">counter works!</p>
+
+<button type="button" class="btn btn-secondary m-3"(click) =decrease(parentData) >-</button>
+<button type="button" class="btn btn-secondary "  (click) =increase(parentData) >+</button>
+
+<p class="text-warning"  *ngIf="parentData<minValue">the value of counter is : {{parentData}}</p>
+<p class="text-danger"  *ngIf="parentData>maxValue">the value of counter is : {{parentData}}</p>
+<p class="text-success"  *ngIf="parentData>=minValue&&parentData<=maxValue">the value of counter is : {{parentData}}</p>
+
+<hr>

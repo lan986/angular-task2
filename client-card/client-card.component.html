@@ -1,0 +1,34 @@
+
+
+<div class="container ">
+    <div class="row ">
+      <div class="col-md-4">
+<div    class="card text-center" style="width: 18rem;" >
+
+    <div class="card-body ">
+      <h5 class="card-title"><b>ID:</b> {{client.id}}</h5>
+      <p class="card-text"><b>initials:</b>  {{client.initials }}</p>
+     <p> <b>description:</b>{{client.description}}</p>
+
+
+
+     <ng-container *ngIf="show">
+        <p class="card-text"><b>sector:</b> {{client.sector }}</p>
+        <div [ngSwitch]= "client.status">
+            <p class="card-text" *ngSwitchCase="'0'">status:deleted </p>
+            <p class="card-text" *ngSwitchCase="'1'">status:active </p>
+            <p class="card-text" *ngSwitchCase="'2'">status:inactive </p>
+        </div>
+        
+        
+     </ng-container>
+    
+     <button class="button btn-success " (click)="toggle()" id="bt">
+      {{buttonName}}
+  </button>  
+  
+
+   
+    </div>
+  </div></div>
+  </div></div>
